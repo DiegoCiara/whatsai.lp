@@ -1,4 +1,4 @@
-import { Check, X, Shield } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 
@@ -58,7 +58,7 @@ const PlanCard = ({
               )}
               <span className="text-gray-700">Respostas inteligentes</span>
             </li>
-            
+
             {/* Integrações de API com subitem */}
             <li className="flex flex-col">
               <div className="flex items-center">
@@ -78,7 +78,7 @@ const PlanCard = ({
                 <span className="text-gray-700">{tokensText}</span>
               </div>
             </li>
-            
+
             {/* Análise básica */}
             <li className="flex items-center">
               {featureChecks["Análise básica de interações"] ? (
@@ -88,7 +88,7 @@ const PlanCard = ({
               )}
               <span className="text-gray-700">Análise básica de interações</span>
             </li>
-            
+
             {/* Análise avançada */}
             <li className="flex items-center">
               {featureChecks["Análise avançada de interações"] ? (
@@ -98,7 +98,7 @@ const PlanCard = ({
               )}
               <span className="text-gray-700">Análise avançada de interações</span>
             </li>
-            
+
             {/* Customização */}
             <li className="flex items-center">
               {featureChecks["Customização de IA"] ? (

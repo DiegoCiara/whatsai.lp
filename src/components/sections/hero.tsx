@@ -2,7 +2,7 @@ import { RocketIcon } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import ChatSimulator from "../chat/chat-simulator";
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,10 +15,10 @@ export function Hero() {
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkIfMobile();
     window.addEventListener('resize', checkIfMobile);
-    
+
     return () => window.removeEventListener('resize', checkIfMobile);
   }, []);
 
