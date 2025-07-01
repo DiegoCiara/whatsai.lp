@@ -28,7 +28,7 @@ export function NavBar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink 
+                <NavigationMenuLink
                   className="text-fuchsia-900 hover:text-fuchsia-700 font-medium px-4 py-2 rounded-lg transition-colors duration-200"
                   href="#hero"
                   onClick={scrollToSection('hero')}
@@ -42,7 +42,7 @@ export function NavBar() {
                   href="#why-choose-whatsai"
                   onClick={scrollToSection('why-choose-whatsai')}
                 >
-                  Features
+                  Funcionalidades
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -51,7 +51,7 @@ export function NavBar() {
                   href="#planos"
                   onClick={scrollToSection('planos')}
                 >
-                  Preço
+                  Preços
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -65,31 +65,31 @@ export function NavBar() {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <Button variant="outline" className="px-4 border-fuchsia-900 text-fuchsia-900 hover:bg-fuchsia-50">
+          <Button variant="outline" className=" min-w-[120px] px-4 border-fuchsia-900 text-fuchsia-900 hover:bg-fuchsia-50">
             Login
           </Button>
-          <Button className="px-4 bg-fuchsia-900 hover:bg-fuchsia-700 text-white">
-            Get Started
+          <Button className="bg-fuchsia-900 hover:bg-fuchsia-700 text-white font-semibold">
+            Cadastre-se
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <Button 
-            variant="ghost" 
+          <Button
+            variant="ghost"
             size="icon"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             className="text-fuchsia-900"
           >
-            {mobileMenuOpen ? <XIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+            {mobileMenuOpen ? <XIcon className="size-6" /> : <MenuIcon className="size-6" />}
           </Button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-t border-fuchsia-100 shadow-lg py-2 px-4">
+        <div className="md:hidden absolute top-15 left-0 right-0 bg-white border-t border-fuchsia-100 shadow-lg py-8 h-[80vh] px-4">
           <div className="flex flex-col space-y-2">
             <Button variant="ghost" className="justify-start text-fuchsia-900 hover:bg-fuchsia-50">
               Home
@@ -99,21 +99,21 @@ export function NavBar() {
               className="justify-start text-fuchsia-900 hover:bg-fuchsia-50"
               onClick={scrollToSection('why-choose-whatsai')}
             >
-              Features
+              Funcionalidades
             </Button>
             <Button
               variant="ghost"
               className="justify-start text-fuchsia-900 hover:bg-fuchsia-50"
               onClick={scrollToSection('planos')}
             >
-              Pricing
+              Preços
             </Button>
             <Button variant="ghost" className="justify-start text-fuchsia-900 hover:bg-fuchsia-50">
-              Contact
+              Contato
             </Button>
             <div className="pt-2 border-t border-fuchsia-100 space-y-2">
-              <Button className="w-full bg-fuchsia-900 hover:bg-fuchsia-700 text-white">
-                Get Started
+              <Button className=" bg-fuchsia-900 hover:bg-fuchsia-700 text-white">
+                Começe agora
               </Button>
             </div>
           </div>

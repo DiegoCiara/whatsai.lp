@@ -42,11 +42,11 @@ export function WhatsAIIntegration() {
       className="flex flex-col justify-items-center items-center mx-auto p-6 sm:p-8 md:p-12 gap-6 w-full"
     >
       <div className="py-6 w-full max-w-6xl px-0 sm:px-0">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center py-2">Integração fácil</h2>
+        <h2 className="sm:text-3xl md:text-4xl font-bold text-center py-2">Conecte a IA no seu whatsapp em 2 cliques</h2>
         <p className="text-base text-gray-500 sm:text-lg md:text-xl text-center">
           Começar a usar o WhatsAI é incrivelmente simples. Basta seguir estes passos
         </p>
-        <div className="flex flex-col md:flex-row gap-6 mt-6 items-center w-full">
+        <div className="flex flex-col md:flex-row gap-6 mt-0 items-center w-full scale-[85%]">
           <IntegrationStepCard
             key={`step1-${animationKey}`}
             title="Conecte WhatsApp"
@@ -60,12 +60,12 @@ export function WhatsAIIntegration() {
           <ArrowRight
             key={`arrow1-${animationKey}`}
             style={visible ? { animationDelay: `0.2s`, animationFillMode: 'forwards' } : {}}
-            className={`hidden md:inline w-8 h-8 text-blue-900 card-animate ${visible ? "opacity-0 animate-fadein" : "opacity-0"}`}
+            className={`mt-[20px] rotate-90 md:rotate-0 md:inline w-8 h-8 text-blue-900 card-animate ${visible ? "opacity-0 animate-fadein" : "opacity-0"}`}
           />
           <IntegrationStepCard
             key={`step2-${animationKey}`}
-            title="Enable AI Features"
-            description="Toggle on the AI features você quer ativar no seu WhatsApp."
+            title="Habilite as integrações"
+            description="Configure a IA para se integrar à suas plataformas e gerenciar suas agendas, clientes, contratos, ou o que for!"
             stepNumber={2}
             source="enable-features.svg"
             sourceHeader="enable.svg"
@@ -76,12 +76,12 @@ export function WhatsAIIntegration() {
           <ArrowRight
             key={`arrow2-${animationKey}`}
             style={visible ? { animationDelay: `1s`, animationFillMode: 'forwards' } : {}}
-            className={`hidden md:inline w-8 h-8 text-blue-900 card-animate ${visible ? "opacity-0 animate-fadein" : "opacity-0"}`}
+            className={`mt-[20px] rotate-90 md:rotate-0 md:inline w-8 h-8 text-blue-900 card-animate ${visible ? "opacity-0 animate-fadein" : "opacity-0"}`}
           />
           <IntegrationStepCard
             key={`step3-${animationKey}`}
-            title="Ready to Use!"
-            description="That's it! Your WhatsApp is now powered by AI. Start enjoying the enhanced features."
+            title="Pronto para usar!"
+            description="É isso! Agora seu WhatsApp está conectado à uma IA que trabalha na sua empresa!"
             stepNumber={3}
             source="complete.svg"
             sourceHeader="ready.svg"

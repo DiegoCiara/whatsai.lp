@@ -26,7 +26,7 @@ const ChatSimulator = ({ mobile = false }: ChatSimulatorProps) => {
 
     const typingTimer = setTimeout(() => {
       setShowTyping(true);
-      
+
       setTimeout(() => {
         setShowTyping(false);
       }, mobile ? 2000 : 3000); // Shorter typing indicator on mobile
@@ -39,9 +39,9 @@ const ChatSimulator = ({ mobile = false }: ChatSimulatorProps) => {
   }, [mobile]);
 
   return (
-    <div 
-      className={`border rounded-lg shadow-lg bg-white ${mobile ? 'w-full' : 'max-w-md'} rounded-lg overflow-hidden`}
-      style={{ 
+    <div
+      className={`border scale-[90%] sm:mr-[30px] rounded-4xl shadow-lg bg-white ${mobile ? 'w-full' : 'max-w-[400px]'} overflow-hidden`}
+      style={{
         justifySelf: 'flex-end',
         width: mobile ? '100%' : undefined
       }}
@@ -51,7 +51,7 @@ const ChatSimulator = ({ mobile = false }: ChatSimulatorProps) => {
           <img src="whatsai-icon.png" className="h-5 w-5 md:h-6 md:w-6 text-purple-900" alt="WhatsAI Logo" />
         </div>
         <div className="flex-1 text-white">
-          <div className="font-semibold text-sm md:text-base">Whats AI</div>
+          <div className="font-semibold text-sm md:text-base">Sua IA</div>
           <div className="text-xs">Online</div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-5 md:w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,16 +59,16 @@ const ChatSimulator = ({ mobile = false }: ChatSimulatorProps) => {
         </svg>
       </div>
 
-      <div 
-        className="bg-gray-200 p-3 overflow-y-auto flex flex-col justify-end"
-        style={{ 
+      <div
+        className="bg-gray-100 p-3 overflow-y-auto flex flex-col justify-end"
+        style={{
           height: mobile ? '300px' : '350px',
-          width: mobile ? '100%' : '440px',
-          backgroundImage: `url('data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" opacity="0.2"><path d="M12 22A10 10 0 0 1 2 12A10 10 0 0 1 12 2A10 10 0 0 1 22 12A10 10 0 0 1 12 22Z" fill="none" stroke="#000" stroke-width="1"/></svg>')}')`
+          width: mobile ? '100%' : '100%',
+          // backgroundImage: `url('data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" opacity="0.2"><path d="M12 22A10 10 0 0 1 2 12A10 10 0 0 1 12 2A10 10 0 0 1 22 12A10 10 0 0 1 12 22Z" fill="none" stroke="#000" stroke-width="1"/></svg>')}')`
         }}
       >
         {messages.slice(0, visibleMessages).map((msg, index) => (
-          <Message 
+          <Message
             key={msg.id}
             position={msg.position as 'left' | 'right'}
             content={msg.content}
@@ -117,7 +117,7 @@ interface MessageProps {
 
 const Message = ({ position, content, time, read = false, isNew = false, mobile = false }: MessageProps) => {
   return (
-    <div 
+    <div
       className={`message ${position === 'left' ? 'self-start' : 'self-end'} max-w-[${mobile ? '90%' : '80%'}] mb-3 md:mb-4 ${isNew ? 'animate-messageIn' : ''}`}
     >
       <div className={`${position === 'left' ? 'message-bubble rounded-lg rounded-tl-none' : 'bg-green-100 rounded-lg rounded-tr-none'} py-1 md:py-2 px-2 md:px-3 inline-block shadow-sm`}>
@@ -147,9 +147,9 @@ interface TypingDotProps {
 
 const TypingDot = ({ delay, mobile = false }: TypingDotProps) => {
   return (
-    <div 
+    <div
       className="typing-dot"
-      style={{ 
+      style={{
         animationDelay: `${delay}s`,
         width: mobile ? '6px' : '8px',
         height: mobile ? '6px' : '8px',
@@ -178,19 +178,19 @@ const styles = `
   .message-bubble {
     background-color: #FFD3FE;
   }
-  
+
   .typing-dot {
     animation: typingDot 1.4s infinite;
     display: inline-block;
     border-radius: 50%;
     background-color: #777;
   }
-  
+
   @keyframes typingDot {
     0%, 60%, 100% { transform: translateY(0); }
     30% { transform: translateY(-5px); }
   }
-  
+
   .header-color {
     background-color: #8F008C;
   }

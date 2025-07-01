@@ -53,17 +53,17 @@ export function Hero() {
     <section
       id="hero"
       ref={containerRef}
-      className="py-10 px-4 sm:px-8 lg:px-8 bg-gradient-to-r from-fuchsia-50 to-white dark:from-fuchsia-900/10 dark:to-white/10 backdrop-blur-md rounded-lg"
+      className="py-4 px-8 sm:px-auto lg:px-auto bg-gradient-to-r from-fuchsia-50 to-white dark:from-fuchsia-900/10 dark:to-white/10 backdrop-blur-md rounded-lg"
       style={{
         paddingBottom: 24,
-        minHeight: isMobile ? '100vh' : undefined,
-        height: isMobile ? '100vh' : undefined,
+        minHeight: isMobile ? 'auto' : 'auto',
+        // height: isMobile ? '100vh' : undefined,
       }}
     >
-      <div className="max-w-6xl mx-auto text-left grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center md:min-h-[60vh]">
+      <div className="max-w-6xl mx-auto text-left grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-14 items-center lg:min-h-[60vh]">
         <div
           key={`hero-content-${animationKey}`}
-          className={`flex flex-col justify-start items-start card-animate w-full ${
+          className={`flex flex-col justify-start items-start card-animate w-full min-h-[40vh] ${
             visible ? "opacity-0 translate-y-8 animate-fadein" : "opacity-0"
           }`}
           style={{
@@ -73,9 +73,9 @@ export function Hero() {
           }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 typewriter-effect leading-tight">
-            <span className="typewriter-line block" style={{ animationDelay: '0s' }}>Transforme o seu</span>
-            <span className="typewriter-line block" style={{ animationDelay: '0.8s' }}>WhatsApp Business</span>
-            <span className="typewriter-line-end block" style={{ animationDelay: '1.6s' }}>
+            <span className="typewriter-line block text-[26px] sm:text-[48px]" style={{ animationDelay: '0s' }}>Transforme o seu</span>
+            <span className="typewriter-line block text-[26px] sm:text-[48px]" style={{ animationDelay: '0.8s' }}>WhatsApp Business</span>
+            <span className="typewriter-line-end block text-[26px] sm:text-[48px]" style={{ animationDelay: '1.6s' }}>
               com o <span className="text-fuchsia-900">Poder da IA</span>
             </span>
           </h1>
@@ -93,8 +93,14 @@ export function Hero() {
           </div>
         </div>
         {/* Desktop ChatSimulator */}
-        {!isMobile && (
-          <div className="w-full flex justify-center md:justify-end items-center">
+        { (
+          <div className="w-full flex mt-[40px] justify-center md:justify-end items-center delayed-appear"
+          style={{
+            animationDelay: visible ? "3s" : undefined,
+            animationFillMode: visible ? "forwards" : undefined,
+            animationDuration: isMobile ? '0.3s' : "0.3s",
+          }}>
+            <img className="absolute h-[55vh] opacity-[30%]" src="splash-bg-whatsai.svg"/>
             <ChatSimulator />
           </div>
         )}

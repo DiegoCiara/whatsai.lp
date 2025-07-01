@@ -32,7 +32,7 @@ const PlanCard = ({
   return (
     <div className="relative">
       {highlight && (
-        <div className="absolute -top-2 -right-2 bg-fuchsia-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+        <div className="absolute -top-2 -right-2 bg-fuchsia-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
           POPULAR
         </div>
       )}
@@ -131,17 +131,6 @@ export const Planos = () => {
       ],
     },
     {
-      title: "Pro",
-      price: "R$140",
-      description: "Ideal para profissionais e empresas em crescimento",
-      features: [
-        "Respostas inteligentes",
-        "15 integrações de API",
-        "Até 200 mi tokens de IA",
-        "Análise básica de interações",
-      ],
-    },
-    {
       title: "Enterprise",
       price: "R$250",
       description: "Ideal para negócios maiores com necessidades avançadas",
@@ -158,17 +147,17 @@ export const Planos = () => {
 
   return (
     <section id="planos">
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-[80vh] flex items-center  bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto px-0 sm:px-0">
-          <div className="text-center mb-12">
+          <div className="text-center">
             <h2 className="text-fuchsia-900">
               Conecte seu número e escolha seu plano
             </h2>
-            <p className="mt-4 text-lg text-gray-600">
+            <p className=" text-lg text-gray-600">
               Escolha o plano perfeito para suas necessidades e comece a aproveitar os benefícios da IA no WhatsApp.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-[300px_300px] lg:grid-cols-[300px_300px] gap-8 justify-center mt-6">
             {plans.map((plan, index) => (
               <PlanCard
                 key={index}
